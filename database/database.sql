@@ -125,6 +125,9 @@ ADD CONSTRAINT fk_user_id_reviews FOREIGN KEY (user_id) REFERENCES users(id) ON 
 ALTER TABLE reviews
 ADD CONSTRAINT fk_property_id_reviews FOREIGN KEY (property_id) REFERENCES properties(id) ON DELETE CASCADE;
 
+
+
+
 Alter table appointments AUTO_INCREMENT = 1;
 ALter table categories AUTO_INCREMENT = 1;
 ALTER table otp AUTO_INCREMENT = 1;

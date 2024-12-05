@@ -48,7 +48,7 @@ if (isset($_POST)&& isset($_POST['name']) && isset($_POST['address']) && isset($
         
 
         if($result){
-            $token = rand(0000, 9999);
+            $token = rand(000000, 999999);
 
             $verify = verificationEmail($email, $token);
 
@@ -100,20 +100,20 @@ if (isset($_POST)&& isset($_POST['name']) && isset($_POST['address']) && isset($
 
 function verificationEmail($email, $otp) : bool 
 {
-    $emailSubject = 'OTP Verification Code from Bahaal';
-    $body = "Your otp code for bahaal is ".$otp;
+    $emailSubject = 'OTP Verification Code from Project name';
+    $body = "Your otp code for email verification is ".$otp;
     $mail = new PHPMailer(true);
     try {
         $mail->isSMTP();
         $mail-> SMTPDebug = 0;
-        $mail->Host = 'smtp.gmail.com';
+        $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 587;
-        $mail->Username = 'susanthapa040@gmail.com';
-        $mail->Password = 'bebe cruq biil xvdd';
+        $mail->Username = '3016ede5089044';
+        $mail->Password = 'af1292011dde52';
         $mail->SMTPSecure = 'tls';
 
-        $mail->setFrom('susanthapa040@gmail.com','Bahaal');
+        $mail->setFrom('project@gmail.com','Project Name');
         $mail->addAddress($email);
         $mail->Subject = $emailSubject;
         $mail->isHTML(false);
